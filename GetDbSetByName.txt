@@ -1,0 +1,17 @@
+public static DbSet GetDbSetByName(Ajuma_devEntities db, string DbSetName, out string sMessage)
+        {
+            sMessage = string.Empty;
+            var type = Assembly.GetExecutingAssembly()
+                    .GetTypes()
+                    .FirstOrDefault(t => t.Name == DbSetName);
+            if (type != null)
+            {
+                DbSet dbSet = db.Set(type);
+                return dbSet;
+            }
+            else
+            {
+                sMessage = "Không có DbSet nào có tên là " + DbSetName + " trong Entities";
+                return null;
+            }
+        }

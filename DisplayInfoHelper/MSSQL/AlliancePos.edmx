@@ -1,0 +1,728 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Ajuma_devModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ConfigDisplayInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Entity" Type="nvarchar" MaxLength="100" />
+          <Property Name="ScreenCode" Type="nvarchar" MaxLength="250" />
+          <Property Name="UserType" Type="nvarchar" MaxLength="250" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="Log_CreatedDate" Type="datetime" />
+          <Property Name="Log_CreatedBy" Type="nvarchar" MaxLength="500" />
+          <Property Name="Log_UpdatedDate" Type="datetime" />
+          <Property Name="Log_UpdatedBy" Type="nvarchar" MaxLength="500" />
+          <Property Name="Note" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ConfigDisplayInfoDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ConfigDisplayInfoId" Type="bigint" Nullable="false" />
+          <Property Name="fConvert" Type="nvarchar(max)" />
+          <Property Name="Fields" Type="nvarchar(max)" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="Log_CreatedDate" Type="datetime" />
+          <Property Name="Log_CreatedBy" Type="nvarchar" MaxLength="500" />
+          <Property Name="Log_UpdatedDate" Type="datetime" />
+          <Property Name="Log_UpdatedBy" Type="nvarchar" MaxLength="500" />
+          <Property Name="Note" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Material">
+          <Key>
+            <PropertyRef Name="MaterialId" />
+          </Key>
+          <Property Name="MaterialId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GrpMaterialId" Type="bigint" Nullable="false" />
+          <Property Name="MaterialCode" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="MaterialName" Type="nvarchar" MaxLength="1024" Nullable="false" />
+          <Property Name="Material_AliasId" Type="bigint" />
+          <Property Name="Material_Alias4Report" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="UnitId" Type="bigint" Nullable="false" />
+          <Property Name="Recipe" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="PriceBeforeVAT" Type="decimal" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="PriceAfterVAT" Type="decimal" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="WholePrice" Type="decimal" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="SellPrice" Type="decimal" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="InventoryMax" Type="float" Nullable="false" />
+          <Property Name="InventoryMin" Type="float" Nullable="false" />
+          <Property Name="Account" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VIn" Type="int" Nullable="false" />
+          <Property Name="VOut" Type="int" Nullable="false" />
+          <Property Name="Note" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TimeWarranty" Type="decimal" Precision="18" Scale="1" Nullable="false" />
+          <Property Name="Locked" Type="bit" Nullable="false" />
+          <Property Name="MaterialTypeId" Type="bigint" Nullable="false" />
+          <Property Name="InValid" Type="bit" Nullable="false" />
+          <Property Name="TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="ProfitRateWholeSale" Type="decimal" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="ProfitRateRetail" Type="decimal" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="TimeStampCode" Type="varbinary" MaxLength="8" />
+          <Property Name="ClientCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="SyncCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="SeriNumber" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="ManufactureId" Type="bigint" />
+          <Property Name="CountryId" Type="bigint" />
+          <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="bigint" Nullable="false" />
+          <Property Name="ModifyDate" Type="datetime" Nullable="false" />
+          <Property Name="SupplierId" Type="bigint" Nullable="false" />
+          <Property Name="SupplierName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Log_LastUpdate_Time_AutoByTrigger" Type="datetime" />
+          <Property Name="Log_LastUpdate_ComputerName_AutoByTrigger" Type="nvarchar" MaxLength="255" />
+          <Property Name="PurchasePrice" Type="decimal" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="PurchasePriceAfterVAT" Type="decimal" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="Disable" Type="int" Nullable="false" />
+          <Property Name="FASH_Color" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FASH_Size" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AutoLogOnCode_LastUpdate_ById" Type="bigint" Nullable="false" />
+          <Property Name="AutoLogOnCode_LastUpdate_ByFullName" Type="nvarchar" MaxLength="250" />
+          <Property Name="AutoLogOnCode_LastUpdate_DateTime" Type="datetime" />
+          <Property Name="AutoLogOnCode_LastUpdate_IP" Type="nvarchar" MaxLength="50" />
+          <Property Name="AutoLogOnCode_LastUpdate_ComputerName" Type="nvarchar" MaxLength="250" />
+          <Property Name="AutoLogOnCode_LastUpdate_MACAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaterialName_Unsign" Type="nvarchar" MaxLength="1024" />
+          <Property Name="MaterialName_Unsign_NoSpecialChar" Type="nvarchar" MaxLength="1024" />
+          <Property Name="MaterialCode_Unsign_NoSpecialChar" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="MaterialStatusId" Type="bigint" Nullable="false" />
+          <Property Name="MaterialColorId" Type="bigint" />
+          <Property Name="MaterialDesignId" Type="bigint" />
+          <Property Name="MaterialSizeId" Type="bigint" />
+          <Property Name="Accounting_Number" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Accounting_SubNumber" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="SellPriceAfterVAT" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="WholePriceAfterVAT" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Config_VIn_Id" Type="bigint" />
+          <Property Name="Config_VOut_Id" Type="bigint" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="IsBoxingType" Type="bit" Nullable="false" />
+          <Property Name="IsBoxOfMaterialId" Type="bigint" />
+          <Property Name="IsBoxOfMaterialId_Quantity" Type="decimal" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="IsImportType" Type="bit" Nullable="false" />
+          <Property Name="MaterialName_English" Type="nvarchar" MaxLength="1024" Nullable="false" />
+          <Property Name="TimeStampText" Type="nvarchar" MaxLength="50" />
+          <Property Name="GrpMaterialCode" Type="nvarchar" MaxLength="250" />
+          <Property Name="IsSystem" Type="bit" Nullable="false" />
+          <Property Name="IsPaymentCard" Type="bit" Nullable="false" />
+          <Property Name="HSCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="Config_VInImport_Id" Type="bigint" />
+          <Property Name="BatchNoCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="SoCongBo" Type="nvarchar" MaxLength="250" />
+          <Property Name="KQuaPhanLoai" Type="nvarchar" MaxLength="250" />
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="IDGuid" Type="uniqueidentifier" />
+          <Property Name="RateInWeb" Type="decimal" Precision="18" Scale="3" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="SupplierId" />
+          </Key>
+          <Property Name="SupplierId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SupplierCode" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="SupplierName" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="SupplierName_UnSign" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="SupplierShortName" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="SupplierEmployerName" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="SupplierEmployerPhone" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="SupplierEmployerEmail" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="TaxCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Trade" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="AccountBank" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Bank" Type="bigint" Nullable="false" />
+          <Property Name="TypeId" Type="bigint" Nullable="false" />
+          <Property Name="AccDebit" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="DebtNorm" Type="decimal" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="Note" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="InValid" Type="bit" Nullable="false" />
+          <Property Name="Disable" Type="bit" Nullable="false" />
+          <Property Name="TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="TimeStampCode" Type="varbinary" MaxLength="8" />
+          <Property Name="ClientCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="SyncCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="VisibleBit" Type="char" MaxLength="1" />
+          <Property Name="DebitLimit" Type="decimal" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="SumOffDebitDay" Type="int" Nullable="false" />
+          <Property Name="BirthDay" Type="datetime" />
+          <Property Name="NumberOfContracts" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="FirstRevenue" Type="bigint" />
+          <Property Name="ContractDate" Type="datetime" />
+          <Property Name="CMND" Type="nvarchar" MaxLength="50" />
+          <Property Name="FormOfPayment" Type="bigint" Nullable="false" />
+          <Property Name="StatusSupplier" Type="int" Nullable="false" />
+          <Property Name="ContractEndDate" Type="datetime" Nullable="false" />
+          <Property Name="IsShip" Type="bit" Nullable="false" />
+          <Property Name="PhanTramCKDungHanTT" Type="decimal" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="PhanTramPhatTraCham" Type="decimal" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="PhanTramCKMuaHang" Type="decimal" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="HanMucTinDung" Type="decimal" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="TargetNam" Type="decimal" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="ThuongNam" Type="decimal" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="TargetQuy" Type="decimal" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="ThuongQuy" Type="decimal" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="CKGoiHang" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="HoTroTrungBay" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="HoTroMarKeting" Type="decimal" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="AutoLogOnCode_LastUpdate_ById" Type="bigint" Nullable="false" />
+          <Property Name="AutoLogOnCode_LastUpdate_ByFullName" Type="nvarchar" MaxLength="250" />
+          <Property Name="AutoLogOnCode_LastUpdate_DateTime" Type="datetime" />
+          <Property Name="AutoLogOnCode_LastUpdate_IP" Type="nvarchar" MaxLength="50" />
+          <Property Name="AutoLogOnCode_LastUpdate_ComputerName" Type="nvarchar" MaxLength="250" />
+          <Property Name="AutoLogOnCode_LastUpdate_MACAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProvinceId" Type="bigint" />
+          <Property Name="ProvinceName" Type="nvarchar" MaxLength="255" />
+          <Property Name="DistrictId" Type="bigint" />
+          <Property Name="DistrictName" Type="nvarchar" MaxLength="255" />
+          <Property Name="WardId" Type="bigint" />
+          <Property Name="WardName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Accounting_SubNumber" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Accounting_Number" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="GenderId" Type="bigint" Nullable="false" />
+          <Property Name="GrpSupplierId" Type="bigint" />
+          <Property Name="Supplier_Offline_Id" Type="bigint" />
+          <Property Name="Supplier_Offline_Code" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Supplier_Offline_SyncCode" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="MixSupplierId" Type="bigint" />
+          <Property Name="BirthDay_ConvertVarChar" Type="varchar" MaxLength="6" StoreGeneratedPattern="Computed" />
+          <Property Name="SupplierName_English" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RegionalId" Type="bigint" />
+          <Property Name="Supplier_BodyLookingId" Type="bigint" />
+          <Property Name="TimeStampText" Type="nvarchar" MaxLength="50" />
+          <Property Name="GrpSupplierCode" Type="nvarchar" MaxLength="250" />
+          <Property Name="FacebookURL" Type="nvarchar" MaxLength="500" />
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="GrpSupplier4ReportId" Type="bigint" />
+          <Property Name="SupplierNameOfficial" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <Association Name="FK_ConfigDisplayInfoDetail_ConfigDisplayInfo">
+          <End Role="ConfigDisplayInfo" Type="Self.ConfigDisplayInfo" Multiplicity="1" />
+          <End Role="ConfigDisplayInfoDetail" Type="Self.ConfigDisplayInfoDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConfigDisplayInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ConfigDisplayInfoDetail">
+              <PropertyRef Name="ConfigDisplayInfoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Material_Supplier">
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="Material" Type="Self.Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="SupplierId" />
+            </Principal>
+            <Dependent Role="Material">
+              <PropertyRef Name="SupplierId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Ajuma_devModelStoreContainer">
+          <EntitySet Name="ConfigDisplayInfo" EntityType="Self.ConfigDisplayInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ConfigDisplayInfoDetail" EntityType="Self.ConfigDisplayInfoDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Material" EntityType="Self.Material" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ConfigDisplayInfoDetail_ConfigDisplayInfo" Association="Self.FK_ConfigDisplayInfoDetail_ConfigDisplayInfo">
+            <End Role="ConfigDisplayInfo" EntitySet="ConfigDisplayInfo" />
+            <End Role="ConfigDisplayInfoDetail" EntitySet="ConfigDisplayInfoDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Material_Supplier" Association="Self.FK_Material_Supplier">
+            <End Role="Supplier" EntitySet="Supplier" />
+            <End Role="Material" EntitySet="Material" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Ajuma_devModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Ajuma_devEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ConfigDisplayInfoes" EntityType="Ajuma_devModel.ConfigDisplayInfo" />
+          <EntitySet Name="ConfigDisplayInfoDetails" EntityType="Ajuma_devModel.ConfigDisplayInfoDetail" />
+          <AssociationSet Name="FK_ConfigDisplayInfoDetail_ConfigDisplayInfo" Association="Ajuma_devModel.FK_ConfigDisplayInfoDetail_ConfigDisplayInfo">
+            <End Role="ConfigDisplayInfo" EntitySet="ConfigDisplayInfoes" />
+            <End Role="ConfigDisplayInfoDetail" EntitySet="ConfigDisplayInfoDetails" />
+          </AssociationSet>
+          <EntitySet Name="Suppliers" EntityType="Ajuma_devModel.Supplier" />
+          <EntitySet Name="Materials" EntityType="Ajuma_devModel.Material" />
+          <AssociationSet Name="FK_Material_Supplier" Association="Ajuma_devModel.FK_Material_Supplier">
+            <End Role="Supplier" EntitySet="Suppliers" />
+            <End Role="Material" EntitySet="Materials" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ConfigDisplayInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Entity" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ScreenCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="UserType" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="Log_CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="Log_CreatedBy" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Log_UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="Log_UpdatedBy" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ConfigDisplayInfoDetails" Relationship="Ajuma_devModel.FK_ConfigDisplayInfoDetail_ConfigDisplayInfo" FromRole="ConfigDisplayInfo" ToRole="ConfigDisplayInfoDetail" />
+        </EntityType>
+        <EntityType Name="ConfigDisplayInfoDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ConfigDisplayInfoId" Type="Int64" Nullable="false" />
+          <Property Name="fConvert" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Fields" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="Log_CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="Log_CreatedBy" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Log_UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="Log_UpdatedBy" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ConfigDisplayInfo" Relationship="Ajuma_devModel.FK_ConfigDisplayInfoDetail_ConfigDisplayInfo" FromRole="ConfigDisplayInfoDetail" ToRole="ConfigDisplayInfo" />
+        </EntityType>
+        <Association Name="FK_ConfigDisplayInfoDetail_ConfigDisplayInfo">
+          <End Type="Ajuma_devModel.ConfigDisplayInfo" Role="ConfigDisplayInfo" Multiplicity="1" />
+          <End Type="Ajuma_devModel.ConfigDisplayInfoDetail" Role="ConfigDisplayInfoDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConfigDisplayInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ConfigDisplayInfoDetail">
+              <PropertyRef Name="ConfigDisplayInfoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="SupplierId" />
+          </Key>
+          <Property Name="SupplierId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SupplierCode" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierName_UnSign" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierShortName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierEmployerName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierEmployerPhone" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierEmployerEmail" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TaxCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Trade" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AccountBank" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Bank" Type="Int64" Nullable="false" />
+          <Property Name="TypeId" Type="Int64" Nullable="false" />
+          <Property Name="AccDebit" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DebtNorm" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="Note" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="InValid" Type="Boolean" Nullable="false" />
+          <Property Name="Disable" Type="Boolean" Nullable="false" />
+          <Property Name="TimeStamp" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="TimeStampCode" Type="Binary" MaxLength="8" FixedLength="false" />
+          <Property Name="ClientCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SyncCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="VisibleBit" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="DebitLimit" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="SumOffDebitDay" Type="Int32" Nullable="false" />
+          <Property Name="BirthDay" Type="DateTime" Precision="3" />
+          <Property Name="NumberOfContracts" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FirstRevenue" Type="Int64" />
+          <Property Name="ContractDate" Type="DateTime" Precision="3" />
+          <Property Name="CMND" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FormOfPayment" Type="Int64" Nullable="false" />
+          <Property Name="StatusSupplier" Type="Int32" Nullable="false" />
+          <Property Name="ContractEndDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsShip" Type="Boolean" Nullable="false" />
+          <Property Name="PhanTramCKDungHanTT" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="PhanTramPhatTraCham" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="PhanTramCKMuaHang" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="HanMucTinDung" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="TargetNam" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="ThuongNam" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="TargetQuy" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="ThuongQuy" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="CKGoiHang" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HoTroTrungBay" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HoTroMarKeting" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="AutoLogOnCode_LastUpdate_ById" Type="Int64" Nullable="false" />
+          <Property Name="AutoLogOnCode_LastUpdate_ByFullName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="AutoLogOnCode_LastUpdate_DateTime" Type="DateTime" Precision="3" />
+          <Property Name="AutoLogOnCode_LastUpdate_IP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AutoLogOnCode_LastUpdate_ComputerName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="AutoLogOnCode_LastUpdate_MACAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProvinceId" Type="Int64" />
+          <Property Name="ProvinceName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DistrictId" Type="Int64" />
+          <Property Name="DistrictName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="WardId" Type="Int64" />
+          <Property Name="WardName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Accounting_SubNumber" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Accounting_Number" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="GenderId" Type="Int64" Nullable="false" />
+          <Property Name="GrpSupplierId" Type="Int64" />
+          <Property Name="Supplier_Offline_Id" Type="Int64" />
+          <Property Name="Supplier_Offline_Code" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Supplier_Offline_SyncCode" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MixSupplierId" Type="Int64" />
+          <Property Name="BirthDay_ConvertVarChar" Type="String" MaxLength="6" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="SupplierName_English" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RegionalId" Type="Int64" />
+          <Property Name="Supplier_BodyLookingId" Type="Int64" />
+          <Property Name="TimeStampText" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GrpSupplierCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FacebookURL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="GrpSupplier4ReportId" Type="Int64" />
+          <Property Name="SupplierNameOfficial" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Materials" Relationship="Ajuma_devModel.FK_Material_Supplier" FromRole="Supplier" ToRole="Material" />
+        </EntityType>
+        <EntityType Name="Material">
+          <Key>
+            <PropertyRef Name="MaterialId" />
+          </Key>
+          <Property Name="MaterialId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GrpMaterialId" Type="Int64" Nullable="false" />
+          <Property Name="MaterialCode" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MaterialName" Type="String" Nullable="false" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="Material_AliasId" Type="Int64" />
+          <Property Name="Material_Alias4Report" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UnitId" Type="Int64" Nullable="false" />
+          <Property Name="Recipe" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PriceBeforeVAT" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="PriceAfterVAT" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="WholePrice" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="SellPrice" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="InventoryMax" Type="Double" Nullable="false" />
+          <Property Name="InventoryMin" Type="Double" Nullable="false" />
+          <Property Name="Account" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VIn" Type="Int32" Nullable="false" />
+          <Property Name="VOut" Type="Int32" Nullable="false" />
+          <Property Name="Note" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TimeWarranty" Type="Decimal" Nullable="false" Precision="18" Scale="1" />
+          <Property Name="Locked" Type="Boolean" Nullable="false" />
+          <Property Name="MaterialTypeId" Type="Int64" Nullable="false" />
+          <Property Name="InValid" Type="Boolean" Nullable="false" />
+          <Property Name="TimeStamp" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="ProfitRateWholeSale" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="ProfitRateRetail" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="TimeStampCode" Type="Binary" MaxLength="8" FixedLength="false" />
+          <Property Name="ClientCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SyncCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SeriNumber" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ManufactureId" Type="Int64" />
+          <Property Name="CountryId" Type="Int64" />
+          <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" Nullable="false" />
+          <Property Name="ModifyDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SupplierId" Type="Int64" Nullable="false" />
+          <Property Name="SupplierName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Log_LastUpdate_Time_AutoByTrigger" Type="DateTime" Precision="3" />
+          <Property Name="Log_LastUpdate_ComputerName_AutoByTrigger" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PurchasePrice" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="PurchasePriceAfterVAT" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="Disable" Type="Int32" Nullable="false" />
+          <Property Name="FASH_Color" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FASH_Size" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AutoLogOnCode_LastUpdate_ById" Type="Int64" Nullable="false" />
+          <Property Name="AutoLogOnCode_LastUpdate_ByFullName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="AutoLogOnCode_LastUpdate_DateTime" Type="DateTime" Precision="3" />
+          <Property Name="AutoLogOnCode_LastUpdate_IP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AutoLogOnCode_LastUpdate_ComputerName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="AutoLogOnCode_LastUpdate_MACAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaterialName_Unsign" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="MaterialName_Unsign_NoSpecialChar" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="MaterialCode_Unsign_NoSpecialChar" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MaterialStatusId" Type="Int64" Nullable="false" />
+          <Property Name="MaterialColorId" Type="Int64" />
+          <Property Name="MaterialDesignId" Type="Int64" />
+          <Property Name="MaterialSizeId" Type="Int64" />
+          <Property Name="Accounting_Number" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Accounting_SubNumber" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SellPriceAfterVAT" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="WholePriceAfterVAT" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Config_VIn_Id" Type="Int64" />
+          <Property Name="Config_VOut_Id" Type="Int64" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="IsBoxingType" Type="Boolean" Nullable="false" />
+          <Property Name="IsBoxOfMaterialId" Type="Int64" />
+          <Property Name="IsBoxOfMaterialId_Quantity" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="IsImportType" Type="Boolean" Nullable="false" />
+          <Property Name="MaterialName_English" Type="String" Nullable="false" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="TimeStampText" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GrpMaterialCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="IsSystem" Type="Boolean" Nullable="false" />
+          <Property Name="IsPaymentCard" Type="Boolean" Nullable="false" />
+          <Property Name="HSCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Config_VInImport_Id" Type="Int64" />
+          <Property Name="BatchNoCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SoCongBo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="KQuaPhanLoai" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="IDGuid" Type="Guid" />
+          <Property Name="RateInWeb" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+          <NavigationProperty Name="Supplier" Relationship="Ajuma_devModel.FK_Material_Supplier" FromRole="Material" ToRole="Supplier" />
+        </EntityType>
+        <Association Name="FK_Material_Supplier">
+          <End Type="Ajuma_devModel.Supplier" Role="Supplier" Multiplicity="1" />
+          <End Type="Ajuma_devModel.Material" Role="Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="SupplierId" />
+            </Principal>
+            <Dependent Role="Material">
+              <PropertyRef Name="SupplierId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Ajuma_devModelStoreContainer" CdmEntityContainer="Ajuma_devEntities">
+          <EntitySetMapping Name="ConfigDisplayInfoes">
+            <EntityTypeMapping TypeName="Ajuma_devModel.ConfigDisplayInfo">
+              <MappingFragment StoreEntitySet="ConfigDisplayInfo">
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="Log_UpdatedBy" ColumnName="Log_UpdatedBy" />
+                <ScalarProperty Name="Log_UpdatedDate" ColumnName="Log_UpdatedDate" />
+                <ScalarProperty Name="Log_CreatedBy" ColumnName="Log_CreatedBy" />
+                <ScalarProperty Name="Log_CreatedDate" ColumnName="Log_CreatedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+                <ScalarProperty Name="Entity" ColumnName="Entity" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConfigDisplayInfoDetails">
+            <EntityTypeMapping TypeName="Ajuma_devModel.ConfigDisplayInfoDetail">
+              <MappingFragment StoreEntitySet="ConfigDisplayInfoDetail">
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="Log_UpdatedBy" ColumnName="Log_UpdatedBy" />
+                <ScalarProperty Name="Log_UpdatedDate" ColumnName="Log_UpdatedDate" />
+                <ScalarProperty Name="Log_CreatedBy" ColumnName="Log_CreatedBy" />
+                <ScalarProperty Name="Log_CreatedDate" ColumnName="Log_CreatedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Fields" ColumnName="Fields" />
+                <ScalarProperty Name="fConvert" ColumnName="fConvert" />
+                <ScalarProperty Name="ConfigDisplayInfoId" ColumnName="ConfigDisplayInfoId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Suppliers">
+            <EntityTypeMapping TypeName="Ajuma_devModel.Supplier">
+              <MappingFragment StoreEntitySet="Supplier">
+                <ScalarProperty Name="SupplierNameOfficial" ColumnName="SupplierNameOfficial" />
+                <ScalarProperty Name="GrpSupplier4ReportId" ColumnName="GrpSupplier4ReportId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FacebookURL" ColumnName="FacebookURL" />
+                <ScalarProperty Name="GrpSupplierCode" ColumnName="GrpSupplierCode" />
+                <ScalarProperty Name="TimeStampText" ColumnName="TimeStampText" />
+                <ScalarProperty Name="Supplier_BodyLookingId" ColumnName="Supplier_BodyLookingId" />
+                <ScalarProperty Name="RegionalId" ColumnName="RegionalId" />
+                <ScalarProperty Name="SupplierName_English" ColumnName="SupplierName_English" />
+                <ScalarProperty Name="BirthDay_ConvertVarChar" ColumnName="BirthDay_ConvertVarChar" />
+                <ScalarProperty Name="MixSupplierId" ColumnName="MixSupplierId" />
+                <ScalarProperty Name="Supplier_Offline_SyncCode" ColumnName="Supplier_Offline_SyncCode" />
+                <ScalarProperty Name="Supplier_Offline_Code" ColumnName="Supplier_Offline_Code" />
+                <ScalarProperty Name="Supplier_Offline_Id" ColumnName="Supplier_Offline_Id" />
+                <ScalarProperty Name="GrpSupplierId" ColumnName="GrpSupplierId" />
+                <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Accounting_Number" ColumnName="Accounting_Number" />
+                <ScalarProperty Name="Accounting_SubNumber" ColumnName="Accounting_SubNumber" />
+                <ScalarProperty Name="WardName" ColumnName="WardName" />
+                <ScalarProperty Name="WardId" ColumnName="WardId" />
+                <ScalarProperty Name="DistrictName" ColumnName="DistrictName" />
+                <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
+                <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+                <ScalarProperty Name="ProvinceId" ColumnName="ProvinceId" />
+                <ScalarProperty Name="AutoLogOnCode_LastUpdate_MACAddress" ColumnName="AutoLogOnCode_LastUpdate_MACAddress" />
+                <ScalarProperty Name="AutoLogOnCode_LastUpdate_ComputerName" ColumnName="AutoLogOnCode_LastUpdate_ComputerName" />
+                <ScalarProperty Name="AutoLogOnCode_LastUpdate_IP" ColumnName="AutoLogOnCode_LastUpdate_IP" />
+                <ScalarProperty Name="AutoLogOnCode_LastUpdate_DateTime" ColumnName="AutoLogOnCode_LastUpdate_DateTime" />
+                <ScalarProperty Name="AutoLogOnCode_LastUpdate_ByFullName" ColumnName="AutoLogOnCode_LastUpdate_ByFullName" />
+                <ScalarProperty Name="AutoLogOnCode_LastUpdate_ById" ColumnName="AutoLogOnCode_LastUpdate_ById" />
+                <ScalarProperty Name="HoTroMarKeting" ColumnName="HoTroMarKeting" />
+                <ScalarProperty Name="HoTroTrungBay" ColumnName="HoTroTrungBay" />
+                <ScalarProperty Name="CKGoiHang" ColumnName="CKGoiHang" />
+                <ScalarProperty Name="ThuongQuy" ColumnName="ThuongQuy" />
+                <ScalarProperty Name="TargetQuy" ColumnName="TargetQuy" />
+                <ScalarProperty Name="ThuongNam" ColumnName="ThuongNam" />
+                <ScalarProperty Name="TargetNam" ColumnName="TargetNam" />
+                <ScalarProperty Name="HanMucTinDung" ColumnName="HanMucTinDung" />
+                <ScalarProperty Name="PhanTramCKMuaHang" ColumnName="PhanTramCKMuaHang" />
+                <ScalarProperty Name="PhanTramPhatTraCham" ColumnName="PhanTramPhatTraCham" />
+                <ScalarProperty Name="PhanTramCKDungHanTT" ColumnName="PhanTramCKDungHanTT" />
+                <ScalarProperty Name="IsShip" ColumnName="IsShip" />
+                <ScalarProperty Name="ContractEndDate" ColumnName="ContractEndDate" />
+                <ScalarProperty Name="StatusSupplier" ColumnName="StatusSupplier" />
+                <ScalarProperty Name="FormOfPayment" ColumnName="FormOfPayment" />
+                <ScalarProperty Name="CMND" ColumnName="CMND" />
+                <ScalarProperty Name="ContractDate" ColumnName="ContractDate" />
+                <ScalarProperty Name="FirstRevenue" ColumnName="FirstRevenue" />
+                <ScalarProperty Name="NumberOfContracts" ColumnName="NumberOfContracts" />
+                <ScalarProperty Name="BirthDay" ColumnName="BirthDay" />
+                <ScalarProperty Name="SumOffDebitDay" ColumnName="SumOffDebitDay" />
+                <ScalarProperty Name="DebitLimit" ColumnName="DebitLimit" />
+                <ScalarProperty Name="VisibleBit" ColumnName="VisibleBit" />
+                <ScalarProperty Name="SyncCode" ColumnName="SyncCode" />
+                <ScalarProperty Name="ClientCode" ColumnName="ClientCode" />
+                <ScalarProperty Name="TimeStampCode" ColumnName="TimeStampCode" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="Disable" ColumnName="Disable" />
+                <ScalarProperty Name="InValid" ColumnName="InValid" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="DebtNorm" ColumnName="DebtNorm" />
+                <ScalarProperty Name="AccDebit" ColumnName="AccDebit" />
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="Bank" ColumnName="Bank" />
+                <ScalarProperty Name="AccountBank" ColumnName="AccountBank" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Trade" ColumnName="Trade" />
+                <ScalarProperty Name="TaxCode" ColumnName="TaxCode" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="SupplierEmployerEmail" ColumnName="SupplierEmployerEmail" />
+                <ScalarProperty Name="SupplierEmployerPhone" ColumnName="SupplierEmployerPhone" />
+                <ScalarProperty Name="SupplierEmployerName" ColumnName="SupplierEmployerName" />
+                <ScalarProperty Name="SupplierShortName" ColumnName="SupplierShortName" />
+                <ScalarProperty Name="SupplierName_UnSign" ColumnName="SupplierName_UnSign" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
+                <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Materials">
+            <EntityTypeMapping TypeName="Ajuma_devModel.Material">
+              <MappingFragment StoreEntitySet="Material">
+                <ScalarProperty Name="RateInWeb" ColumnName="RateInWeb" />
+                <ScalarProperty Name="IDGuid" ColumnName="IDGuid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="KQuaPhanLoai" ColumnName="KQuaPhanLoai" />
+                <ScalarProperty Name="SoCongBo" ColumnName="SoCongBo" />
+                <ScalarProperty Name="BatchNoCode" ColumnName="BatchNoCode" />
+                <ScalarProperty Name="Config_VInImport_Id" ColumnName="Config_VInImport_Id" />
+                <ScalarProperty Name="HSCode" ColumnName="HSCode" />
+                <ScalarProperty Name="IsPaymentCard" ColumnName="IsPaymentCard" />
+                <ScalarProperty Name="IsSystem" ColumnName="IsSystem" />
+                <ScalarProperty Name="GrpMaterialCode" ColumnName="GrpMaterialCode" />
+                <ScalarProperty Name="TimeStampText" ColumnName="TimeStampText" />
+                <ScalarProperty Name="MaterialName_English" ColumnName="MaterialName_English" />
+                <ScalarProperty Name="IsImportType" ColumnName="IsImportType" />
+                <ScalarProperty Name="IsBoxOfMaterialId_Quantity" ColumnName="IsBoxOfMaterialId_Quantity" />
+                <ScalarProperty Name="IsBoxOfMaterialId" ColumnName="IsBoxOfMaterialId" />
+                <ScalarProperty Name="IsBoxingType" ColumnName="IsBoxingType" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Config_VOut_Id" ColumnName="Config_VOut_Id" />
+                <ScalarProperty Name="Config_VIn_Id" ColumnName="Config_VIn_Id" />
+                <ScalarProperty Name="WholePriceAfterVAT" ColumnName="WholePriceAfterVAT" />
+                <ScalarProperty Name="SellPriceAfterVAT" ColumnName="SellPriceAfterVAT" />
+                <ScalarProperty Name="Accounting_SubNumber" ColumnName="Accounting_SubNumber" />
+                <ScalarProperty Name="Accounting_Number" ColumnName="Accounting_Number" />
+                <ScalarProperty Name="MaterialSizeId" ColumnName="MaterialSizeId" />
+                <ScalarProperty Name="MaterialDesignId" ColumnName="MaterialDesignId" />
+                <ScalarProperty Name="MaterialColorId" ColumnName="MaterialColorId" />
+                <ScalarProperty Name="MaterialStatusId" ColumnName="MaterialStatusId" />
+                <ScalarProperty Name="MaterialCode_Unsign_NoSpecialChar" ColumnName="MaterialCode_Unsign_NoSpecialChar" />
+                <ScalarProperty Name="MaterialName_Unsign_NoSpecialChar" ColumnName="MaterialName_Unsign_NoSpecialChar" />
+                <ScalarProperty Name="MaterialName_Unsign" ColumnName="MaterialName_Unsign" />
+                <ScalarProperty Name="AutoLogOnCode_LastUpdate_MACAddress" ColumnName="AutoLogOnCode_LastUpdate_MACAddress" />
+                <ScalarProperty Name="AutoLogOnCode_LastUpdate_ComputerName" ColumnName="AutoLogOnCode_LastUpdate_ComputerName" />
+                <ScalarProperty Name="AutoLogOnCode_LastUpdate_IP" ColumnName="AutoLogOnCode_LastUpdate_IP" />
+                <ScalarProperty Name="AutoLogOnCode_LastUpdate_DateTime" ColumnName="AutoLogOnCode_LastUpdate_DateTime" />
+                <ScalarProperty Name="AutoLogOnCode_LastUpdate_ByFullName" ColumnName="AutoLogOnCode_LastUpdate_ByFullName" />
+                <ScalarProperty Name="AutoLogOnCode_LastUpdate_ById" ColumnName="AutoLogOnCode_LastUpdate_ById" />
+                <ScalarProperty Name="FASH_Size" ColumnName="FASH_Size" />
+                <ScalarProperty Name="FASH_Color" ColumnName="FASH_Color" />
+                <ScalarProperty Name="Disable" ColumnName="Disable" />
+                <ScalarProperty Name="PurchasePriceAfterVAT" ColumnName="PurchasePriceAfterVAT" />
+                <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+                <ScalarProperty Name="Log_LastUpdate_ComputerName_AutoByTrigger" ColumnName="Log_LastUpdate_ComputerName_AutoByTrigger" />
+                <ScalarProperty Name="Log_LastUpdate_Time_AutoByTrigger" ColumnName="Log_LastUpdate_Time_AutoByTrigger" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="ManufactureId" ColumnName="ManufactureId" />
+                <ScalarProperty Name="SeriNumber" ColumnName="SeriNumber" />
+                <ScalarProperty Name="SyncCode" ColumnName="SyncCode" />
+                <ScalarProperty Name="ClientCode" ColumnName="ClientCode" />
+                <ScalarProperty Name="TimeStampCode" ColumnName="TimeStampCode" />
+                <ScalarProperty Name="ProfitRateRetail" ColumnName="ProfitRateRetail" />
+                <ScalarProperty Name="ProfitRateWholeSale" ColumnName="ProfitRateWholeSale" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="InValid" ColumnName="InValid" />
+                <ScalarProperty Name="MaterialTypeId" ColumnName="MaterialTypeId" />
+                <ScalarProperty Name="Locked" ColumnName="Locked" />
+                <ScalarProperty Name="TimeWarranty" ColumnName="TimeWarranty" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="VOut" ColumnName="VOut" />
+                <ScalarProperty Name="VIn" ColumnName="VIn" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="InventoryMin" ColumnName="InventoryMin" />
+                <ScalarProperty Name="InventoryMax" ColumnName="InventoryMax" />
+                <ScalarProperty Name="SellPrice" ColumnName="SellPrice" />
+                <ScalarProperty Name="WholePrice" ColumnName="WholePrice" />
+                <ScalarProperty Name="PriceAfterVAT" ColumnName="PriceAfterVAT" />
+                <ScalarProperty Name="PriceBeforeVAT" ColumnName="PriceBeforeVAT" />
+                <ScalarProperty Name="Recipe" ColumnName="Recipe" />
+                <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+                <ScalarProperty Name="Material_Alias4Report" ColumnName="Material_Alias4Report" />
+                <ScalarProperty Name="Material_AliasId" ColumnName="Material_AliasId" />
+                <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+                <ScalarProperty Name="MaterialCode" ColumnName="MaterialCode" />
+                <ScalarProperty Name="GrpMaterialId" ColumnName="GrpMaterialId" />
+                <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
