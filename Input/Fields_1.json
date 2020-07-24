@@ -1,3 +1,3 @@
 {
-  "fields": [ "SupplierName", "Address", "Phone" , "123123124f"]
+  "fields": [ "SupplierName", "Address", "MaterialCode", "MaterialName", "SellPrice", "TaxCode", "Phone" ]
 }
